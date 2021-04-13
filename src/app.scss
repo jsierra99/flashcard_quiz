@@ -1,0 +1,134 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    body
+    {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+       form.header
+       {
+            background: rgb(148, 11, 11);  
+            padding: 2rem 0;  
+        
+            .form-group
+            {
+                display: grid;
+                place-items: center;
+
+                label
+                {
+                    color: yellow;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    margin-bottom: .5rem;
+                }
+
+                button
+                {
+                    background: transparent;
+                    outline: none;
+                    border: 3px solid yellow;
+                    color: yellow;
+                    font-weight: 700;
+                    padding: .75rem 1.75rem;
+                    border-radius: 20px;
+                    font-size: 1rem;
+                    margin-top: 2rem;
+                    cursor: pointer;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .form-group:nth-child(2)
+            {
+                margin-top: 1rem;
+            }
+       } 
+
+        .container
+        {
+            max-width: 80%;
+            margin: 2rem auto 0 auto;
+
+            .card-grid
+            {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-gap: 2rem;
+
+                .card
+                {
+                    border: 5px solid rgb(9, 248, 9);
+                    background: rgb(75, 73, 73);
+                    border-radius: 20px;
+                    color: #fff;
+                    position: relative;
+                    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+                    transform-style: preserve-3d;
+                    display: grid;
+                    place-items: center;
+                    transition: 150ms;
+                    cursor: pointer;
+
+                    &:hover
+                    {
+                        box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+                        --translate-y: -5px
+                    }
+
+                    .front, .back
+                    {
+                        position: absolute;
+                        backface-visibility: hidden;
+                        padding: 1rem;
+                    }
+
+                    .front
+                    {
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+
+                        h3
+                        {
+                            font-weight: 500;
+                            font-size: 1.1rem;
+                            text-align: center;
+                        }
+
+                        .flashcard-options
+                        {
+                            margin-top: 1rem;
+
+                            .flashcard-option
+                            {
+
+                                padding: .5rem 0;
+                                border-top: 2px solid rgb(9, 248, 9);
+                                font-size: .8rem;
+                            }
+
+                            .flashcard-option:last-child
+                            {
+                                border-bottom: 2px solid rgb(9, 248, 9);
+                            }
+                        }
+                    }
+
+                    .back
+                    {
+                        transform: rotateY(180deg);
+                    }
+                }
+
+                .flip
+                {
+                    --rotate-y: 180deg;
+                }
+            }
+        }
+    }
+}
