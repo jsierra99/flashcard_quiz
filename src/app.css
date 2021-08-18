@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* body form.header {
+  background: #940b0b;
+  padding: 2rem 0;
+}
+
+* body form.header .form-group {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+* body form.header .form-group label {
+  color: yellow;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+* body form.header .form-group button {
+  background: transparent;
+  outline: none;
+  border: 3px solid yellow;
+  color: yellow;
+  font-weight: 700;
+  padding: .75rem 1.75rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+* body form.header .form-group:nth-child(2) {
+  margin-top: 1rem;
+}
+
+* body .container {
+  max-width: 80%;
+  margin: 2rem auto 0 auto;
+}
+
+* body .container .card-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+}
+
+* body .container .card-grid .card {
+  border: 5px solid #09f809;
+  background: #4b4949;
+  border-radius: 20px;
+  color: #fff;
+  position: relative;
+  -webkit-transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+          transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+  cursor: pointer;
+}
+
+* body .container .card-grid .card:hover {
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  --translate-y: -5px
+                    ;
+}
+
+* body .container .card-grid .card .front, * body .container .card-grid .card .back {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  padding: 1rem;
+}
+
+* body .container .card-grid .card .front {
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+* body .container .card-grid .card .front h3 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+* body .container .card-grid .card .front .flashcard-options {
+  margin-top: 1rem;
+}
+
+* body .container .card-grid .card .front .flashcard-options .flashcard-option {
+  padding: .5rem 0;
+  border-top: 2px solid #09f809;
+  font-size: .8rem;
+}
+
+* body .container .card-grid .card .front .flashcard-options .flashcard-option:last-child {
+  border-bottom: 2px solid #09f809;
+}
+
+* body .container .card-grid .card .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+* body .container .card-grid .flip {
+  --rotate-y: 180deg;
+}
+/*# sourceMappingURL=app.css.map */
